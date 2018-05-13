@@ -1,0 +1,43 @@
+.styleguide-colors-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 32px 16px 8px;
+
+  @include breakpoint(lg) {
+    justify-content: space-between;
+  }
+}
+
+.styleguide-color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  padding-bottom: 24px;
+
+  @include breakpoint(lg) {
+    width: 25%;
+  }
+}
+
+.styleguide-color-circle {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+}
+
+.styleguide-color-name,
+.styleguide-color-variable,
+.styleguide-color-hex {
+  margin: 4px 0 0;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.styleguide-color-variable {
+  color: #ff0000;
+  font-family: monospace;
+}

@@ -1,0 +1,99 @@
+// Breakpoints
+@mixin breakpoint($width) {
+  @if ($width == xs) {
+    @media (min-width: $xs) {
+      @content;
+    }
+  }
+
+  @if ($width == sm) {
+    @media (min-width: $sm) {
+      @content;
+    }
+  }
+
+  @if ($width == sm-only) {
+    @media (max-width: $sm - 1) {
+      @content;
+    }
+  }
+
+  @if ($width == md) {
+    @media (min-width: $md) {
+      @content;
+    }
+  }
+
+  @if ($width == lg) {
+    @media (min-width: $lg) {
+      @content;
+    }
+  }
+
+  @if ($width == xl) {
+    @media (min-width: $xl) {
+      @content;
+    }
+  }
+}
+
+// Transitions
+@mixin transition($what, $duration, $easing) {
+  transition: $what $duration $easing;
+}
+
+// Translate
+@mixin translate($plx, $ply, $plz) {
+  transform: translate3d($plx, $ply, $plz);
+}
+
+// Font weights
+@mixin font($weight: 300) {
+  @if $weight == 300 {
+    font-family: "SourceSansPro_Light", sans-serif;
+    font-weight: 300;
+  }
+
+  @if $weight == 400 {
+    font-family: "SourceSansPro_Regular", sans-serif;
+    font-weight: 400;
+  }
+
+  @if $weight == 600 {
+    font-family: "SourceSansPro_SemiBold", sans-serif;
+    font-weight: 600;
+  }
+
+  @if $weight == 700 {
+    font-family: "SourceSansPro_Bold", sans-serif;
+    font-weight: 700;
+  }
+}
+
+// Font weights (italic)
+@mixin font-italic($weight: 300) {
+  @if $weight == 300 {
+    font-family: "SourceSansPro_Light_Italic", sans-serif;
+    font-weight: 300;
+  }
+
+  @if $weight == 400 {
+    font-family: "SourceSansPro_Regular_Italic", sans-serif;
+    font-weight: 400;
+  }
+
+  @if $weight == 600 {
+    font-family: "SourceSansPro_SemiBold_Italic", sans-serif;
+    font-weight: 600;
+  }
+
+  @if $weight == 700 {
+    font-family: "SourceSansPro_Bold_Italic", sans-serif;
+    font-weight: 700;
+  }
+}
+
+// Opacity transition
+@mixin opacity ($t) {
+  transition: opacity $t ease-in-out, visibility $t ease-in-out, transform $t ease-in-out;
+}

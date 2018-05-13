@@ -1,0 +1,72 @@
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: .5em;
+  color: $dark-grey;
+  line-height: 1.125em;
+
+  @include font(600);
+}
+
+h1 {
+  font-size: 1.25rem;
+
+  @include breakpoint(md) {
+    font-size: 1.75rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 2.25rem;
+  }
+}
+
+h2 {
+  font-size: 1.125rem;
+
+  @include breakpoint(md) {
+    font-size: 1.5rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 1rem;
+
+  @include breakpoint(md) {
+    font-size: 1.325rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 1.625rem;
+  }
+}
+
+h4 {
+  font-size: 1rem;
+
+  @include breakpoint(md) {
+    font-size: 1.25rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 1.5rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  @include font(700);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

@@ -1,0 +1,27 @@
+.styleguide-navigation-wrapper {
+  border-bottom: 1px solid $black;
+}
+
+.styleguide-navigation {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.styleguide-navigation-label {
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.styleguide-navigation-select {
+  max-width: 360px;
+
+  @include breakpoint(md) {
+    margin-left: 8px;
+  }
+}

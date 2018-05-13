@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: invite-u
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: invite-u
+        tier: frontend
+    spec:
+      containers:
+      - name: invite-u
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "100m"
+          limits:
+            memory: "200Mi"
+            cpu: "150m"
+        ports:
+        - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: invite-u
+spec:
+  selector:
+    app: invite-u
+  type: LoadBalancer
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    nodePort: 30080
+    targetPort: 80

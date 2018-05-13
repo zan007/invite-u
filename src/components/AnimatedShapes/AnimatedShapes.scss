@@ -1,0 +1,44 @@
+.shapes {
+  position: absolute;
+  top: -50vh;
+  z-index: 1;
+  width: 900px;
+  height: 200vh;
+  min-height: 700px;
+
+  .left-rect,
+  .right-rect,
+  .middle-rect {
+    backface-visibility: hidden;
+    opacity: 0;
+    will-change: auto;
+  }
+
+  .latest-news & {
+    left: -250px;
+
+    @include breakpoint(sm-only) {
+      transform: translate3d(-10%, -7%, 0) scale(.5);
+    }
+
+    .wrapper {
+      transform: translate3d(100px, -20%, 0) scale(.75);
+    }
+  }
+}
+
+.in-view {
+  .shapes {
+    .left-rect {
+      animation: skewedBottomTop .7s .1s ease-in-out both;
+    }
+
+    .right-rect {
+      animation: skewedTopBottom .7s .7s ease-in-out both;
+    }
+
+    .middle-rect {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.section-title {
+  font-size: 1.5rem;
+
+  @include breakpoint(sm) {
+    font-size: 1.75rem;
+  }
+
+  @include breakpoint(md) {
+    font-size: 2rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 2.25rem;
+  }
+
+  @include breakpoint(xl) {
+    font-size: 2.5rem;
+  }
+
+  @include font(600);
+}
+
+section {
+  position: relative;
+
+  &.full-height {
+    height: 100vh;
+  }
+
+  &.bg-white {
+    background: $white;
+  }
+
+  &.bg-black {
+    background: $black;
+  }
+
+  &.bg-light-grey {
+    background: $light-grey;
+  }
+
+  &.bg-dark-grey {
+    background: $dark-grey;
+  }
+
+  &.bg-blue {
+    background: $blue;
+  }
+
+  &.bg-yellow {
+    background: $yellow;
+  }
+
+  &.bg-green {
+    background: $green;
+  }
+
+  &.bg-salmon {
+    background: $salmon;
+  }
+
+  &.bg-blue,
+  &.bg-dark-grey {
+    .section-title {
+      color: $white;
+    }
+  }
+}

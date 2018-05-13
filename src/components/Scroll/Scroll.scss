@@ -1,0 +1,54 @@
+.scroll-down,
+.scroll-up {
+  right: 0;
+  bottom: 35px;
+  left: 0;
+  margin: 0 auto;
+}
+
+.scroll-up,
+.scroll-top,
+.scroll-down {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 3px solid $white;
+  border-radius: 50%;
+  color: $white;
+  cursor: pointer;
+  line-height: 40px;
+  text-align: center;
+
+  @include breakpoint(sm) {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  &::before {
+    font-size: 24px;
+    line-height: 1;
+
+    @include transition(all, .2s, ease);
+
+    @include breakpoint(sm) {
+      font-size: 28px;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $white;
+
+    @include breakpoint(sm) {
+      &::before {
+        font-size: 32px;
+      }
+    }
+  }
+}

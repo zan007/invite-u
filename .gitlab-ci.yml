@@ -1,0 +1,72 @@
+image: node:8
+
+variables:
+  HTTP_PROXY: http://repo.non.3dart.com:3128
+  HTTPS_PROXY: http://repo.non.3dart.com:3128
+  NO_PROXY: localhost,127.0.0.1,.non.3dart.com,docker,${DOCKER_REGISTRY}-swsdn-dind
+
+cache:
+  untracked: true
+  key: "$CI_COMMIT_REF_SLUG"
+  paths:
+    - node_modules/
+
+stages:
+  - install
+  - tests
+  - build
+  - deploy_dev
+
+install_npm:
+  stage: install
+  script:
+    - yarn config set https-proxy ${HTTPS_PROXY}
+    - yarn config set proxy ${HTTP_PROXY}
+    - yarn install --pure-lockfile
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - node_modules/
+
+lint_and_test:
+  stage: tests
+  artifacts:
+    when: always
+    expire_in: 1 week
+    paths:
+      - coverage/
+  script:
+    - yarn "lint:css"
+    - yarn "lint:ts"
+    - yarn "test:unit:coverage"
+
+build_project:
+  stage: build
+  only:
+    - master
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - dist/
+  script:
+    - yarn "build:prod"
+
+deploy_dev:
+  stage: deploy_dev
+  only:
+    - master
+  dependencies:
+    - build_project
+  script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY_DEV" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan dev-kredi-nw >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - |
+        sftp sftp@dev-kredi-nw << EOM
+          put -r dist/* /kredi-nw.dev.efigence.com
+          quit
+        EOM

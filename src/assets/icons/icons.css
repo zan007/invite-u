@@ -1,0 +1,96 @@
+@font-face {
+	font-family: "icons";
+	src: url("/assets/fonts/icons.eot?fb11fa05e08383b3b8438aa4cc5f83df?#iefix") format("embedded-opentype"),
+url("/assets/fonts/icons.woff2?fb11fa05e08383b3b8438aa4cc5f83df") format("woff2"),
+url("/assets/fonts/icons.woff?fb11fa05e08383b3b8438aa4cc5f83df") format("woff");
+}
+
+.icon {
+	line-height: 1;
+}
+
+.icon:before {
+	font-family: icons !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.icon-arrow-down:before {
+	content: "\f101";
+}
+.icon-arrow-left:before {
+	content: "\f102";
+}
+.icon-arrow-right:before {
+	content: "\f103";
+}
+.icon-arrow-up:before {
+	content: "\f104";
+}
+.icon-cart-person:before {
+	content: "\f105";
+}
+.icon-case:before {
+	content: "\f106";
+}
+.icon-clock:before {
+	content: "\f107";
+}
+.icon-close:before {
+	content: "\f108";
+}
+.icon-download:before {
+	content: "\f109";
+}
+.icon-email:before {
+	content: "\f10a";
+}
+.icon-facebook:before {
+	content: "\f10b";
+}
+.icon-gear-hands:before {
+	content: "\f10c";
+}
+.icon-google:before {
+	content: "\f10d";
+}
+.icon-linkedin:before {
+	content: "\f10e";
+}
+.icon-mute:before {
+	content: "\f10f";
+}
+.icon-paper-pencil:before {
+	content: "\f110";
+}
+.icon-pause:before {
+	content: "\f111";
+}
+.icon-person-connection-thin:before {
+	content: "\f112";
+}
+.icon-person-connection:before {
+	content: "\f113";
+}
+.icon-person-plus:before {
+	content: "\f114";
+}
+.icon-phone:before {
+	content: "\f115";
+}
+.icon-play:before {
+	content: "\f116";
+}
+.icon-quote:before {
+	content: "\f117";
+}
+.icon-russia-building:before {
+	content: "\f118";
+}
+.icon-twitter:before {
+	content: "\f119";
+}
+.icon-volume:before {
+	content: "\f11a";
+}

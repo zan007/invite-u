@@ -1,0 +1,19 @@
+.counter {
+  &::after {
+    z-index: 1;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: .5rem;
+    animation: scaleIn .4s 1s ease-in-out both;
+    background-color: $green;
+    border-radius: 50%;
+    color: $white;
+    content: attr(data-count);
+    font-size: .875rem;
+    line-height: 27px;
+    text-align: center;
+
+    @include font(400);
+  }
+}

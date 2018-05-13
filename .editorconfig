@@ -1,0 +1,20 @@
+# EditorConfig is awesome: http://EditorConfig.org
+# Sublime - https://github.com/sindresorhus/editorconfig-sublime#readme
+# Webstorm - out of box
+# VIM - https://github.com/editorconfig/editorconfig-vim#readme
+# Brackets - https://github.com/kidwm/brackets-editorconfig/
+# Atom - https://github.com/sindresorhus/atom-editorconfig#readme
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+indent_size = 2
+
+[*.scss]
+indent_size = 2

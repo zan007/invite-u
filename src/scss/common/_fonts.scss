@@ -101,3 +101,16 @@
     url("/assets/fonts/sourcesanspro-bolditalic.ttf") format("truetype"),
     url("/assets/fonts/sourcesanspro-bolditalic.svg#sourcesanspro-bolditalic") format("svg");
 }
+
+// Allura handwrite Regular
+@font-face {
+  font-family: "Handwrite";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/src/assets/fonts/Allura-Regular.eot");
+  src: url("/assets/fonts/Allura-Regular.eot?#iefix") format("embedded-opentype"),
+  url("/assets/fonts/Allura-Regular.woff") format("woff"),
+  url("/assets/fonts/Allura-Regular.woff2") format("woff2"),
+  url("/assets/fonts/Allura-Regular.ttf") format("truetype"),
+  url("/assets/fonts/Allura-Regular.svg#Allura-Regular") format("svg");
+}

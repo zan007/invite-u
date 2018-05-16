@@ -4,9 +4,8 @@ import {EntryCollection} from "contentful"
 import {Link} from "react-router-dom"
 
 interface IProps {
-  title: string,
-  subtitle: string,
-  description: string,
+  hisName: string,
+  herName: string,
 }
 
 interface IState {}
@@ -22,6 +21,8 @@ class MeetUs extends React.Component<IProps, IState> {
     return (
       <div>
         meet us
+        {this.props.herName}
+        {this.props.hisName}
         <div>
           <Link to="/">
             home

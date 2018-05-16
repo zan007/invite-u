@@ -1,69 +1,42 @@
 import * as React from "react"
+import {EntryCollection} from "contentful"
 import {IPageDto} from "dto/pages"
 import {getEntries} from "dao/entries"
 import {Spinner} from "components/Spinner"
+import {WidgetsList} from "components/WidgetsList"
 
 interface IProps {
   data: IPageDto
 }
 
 interface IState {
-  pageComponent: string | null
+  children: EntryCollection<any> | null
 }
-
-interface IPagesMap {
-  [key: string]: any
-}
-
-const pagesMap: IPagesMap = {
-  meetUs: require("./../pages/MeetUs").default
-}
-
 
 class PageContainer extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props)
 
-    this.state = {pageComponent: null}
-
-    void this.getPageComponent()
+    this.state = {children: null}
+    void this.getChildren()
   }
 
   render() {
-    const {pageComponent} = this.state
+    const {children} = this.state
 
-    if (pageComponent) {
-      return this.renderPageComponent()
+    if (children) {
+      return (<WidgetsList items={children.items} />)
     }
 
     return <Spinner />
   }
 
-  private async getPageComponent() {
-    const {data} = this.props
-    const ids = [data.pageComponent.sys.id]
+  private async getChildren() {
+    const ids = this.props.data.sections.map((section) => section.sys.id)
 
-    return getEntries(ids).then((entries) => {
-      if (entries.items.length) {
-        const pageComponent = entries.items[0].fields.name
-
-        this.setState({pageComponent})
-      }
+    return getEntries(ids).then((children) => {
+      this.setState({children})
     })
-  }
-
-  private renderPageComponent = () => {
-    const {pageComponent} = this.state
-
-    if (pageComponent) {
-      const Component = pagesMap[pageComponent]
-
-      if (Component) {
-        return <Component/>
-      }
-    }
-
-    return null
   }
 }
 

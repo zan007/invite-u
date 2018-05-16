@@ -26,7 +26,8 @@ export type IconName = "arrow-down" |
   "quote" |
   "russia-building" |
   "twitter" |
-  "volume"
+  "volume" |
+  "couple"
 
 interface IProps {
   children?: any,

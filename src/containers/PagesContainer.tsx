@@ -16,6 +16,7 @@ const mapStateToProps = (state: IStoreState): IStateProps => {
 
   return {pages}
 }
+
 const renderPage = (page: IPageDto) => (props: RouteComponentProps<any>) => (<PageContainer {...props} data={page} />)
 
 type Props = RouteComponentProps<any> & IStateProps

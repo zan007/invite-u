@@ -1,0 +1,13 @@
+.divider {
+  .top {
+    fill: none;
+  }
+
+  .bottom {
+    fill: $almond;
+  }
+
+  .left, .right {
+    fill: rgba($white, 0.4)
+  }
+}

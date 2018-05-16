@@ -5,4 +5,5 @@ export type ColorNames = "white" |
   "blue" |
   "yellow" |
   "green" |
-  "salmon"
+  "salmon" |
+  "almond"

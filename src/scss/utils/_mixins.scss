@@ -93,6 +93,28 @@
   }
 }
 
+@mixin font-handwrite($weight: 300) {
+  @if $weight == 300 {
+    font-family: "Handwrite", sans-serif;
+    font-weight: 300;
+  }
+
+  @if $weight == 400 {
+    font-family: "Handwrite", sans-serif;
+    font-weight: 400;
+  }
+
+  @if $weight == 600 {
+    font-family: "Handwrite", sans-serif;
+    font-weight: 600;
+  }
+
+  @if $weight == 700 {
+    font-family: "Handwrite", sans-serif;
+    font-weight: 700;
+  }
+}
+
 // Opacity transition
 @mixin opacity ($t) {
   transition: opacity $t ease-in-out, visibility $t ease-in-out, transform $t ease-in-out;

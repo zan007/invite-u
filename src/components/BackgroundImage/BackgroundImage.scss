@@ -11,6 +11,11 @@
   opacity: 0;
   transition: all .5s linear;
 
+  & + div {
+    position: relative;
+    z-index: 2;
+  }
+
   &.right {
     background-position: 70% center;
 

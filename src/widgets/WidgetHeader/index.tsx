@@ -30,7 +30,6 @@ class WidgetHeader extends React.Component<IProps> {
             <Icon name={"couple"}/>
           </Col>
         </Row>
-        <Divider/>
       </header>
     )
   }

@@ -7,9 +7,10 @@ import {ColorNames} from "models/colorNames"
 import {BackgroundImage} from "components/BackgroundImage"
 import {InView} from "components/InView"
 import {Scroll} from "components/Scroll"
-import {Icon, IconName} from "components/Icon"
+import {IconName} from "components/Icon"
 import {Row, Col} from "components/grid"
 import {Divider} from "components/Divider"
+import {SectionTitle} from "./SectionTitle"
 
 interface IProps {
   children?: any
@@ -50,24 +51,16 @@ const Section: React.SFC<IProps> = ({
             image={image}
           />
         }
-        <Row hAlign={"center"}>
-          <Col small={12} className={"text-center"}>
-            {icon &&
-              <div className={"section-icon"}>
-                <Icon name={icon}/>
-              </div>
-            }
-          </Col>
-          <Col small={12} className={"text-center"}>
-            {title &&
-              <h2 className={"section-title"}>{title}</h2>
-            }
-          </Col>
-        </Row>
+        {topDivider &&
+          <div className={"top-divider"}>
+            <Divider top={true}/>
+          </div>
+        }
+        <SectionTitle icon={icon} title={title}/>
         {children}
         {bottomDivider &&
           <div className={"bottom-divider"}>
-            <Divider/>
+            <Divider bottom={true}/>
           </div>
         }
         {scroll &&

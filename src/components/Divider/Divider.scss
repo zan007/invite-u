@@ -1,13 +1,27 @@
 .divider {
-  .top {
-    fill: none;
+  &.bottom {
+    .top-polygon {
+      fill: none;
+    }
+
+    .bottom-polygon {
+      fill: $almond;
+    }
+
+    .left-polygon, .right-polygon {
+      fill: rgba($white, 0.4)
+    }
   }
 
-  .bottom {
-    fill: $almond;
-  }
+  &.top {
+    .top-polygon {
+      fill: $almond;
+    }
 
-  .left, .right {
-    fill: rgba($white, 0.4)
+    .bottom-polygon,
+    .left-polygon,
+    .right-polygon {
+      fill: none;
+    }
   }
 }

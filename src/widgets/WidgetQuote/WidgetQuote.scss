@@ -1,0 +1,9 @@
+.widget-quote {
+  height: 650px;
+
+  h3 {
+    color: $white;
+    font-size: 3rem;
+    @include font-handwrite(400);
+  }
+}

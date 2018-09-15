@@ -1,0 +1,74 @@
+.person-details {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  text-align: center;
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  @include breakpoint(lg) {
+    &.float-left {
+      text-align: left;
+
+      .avatar-column {
+        order: 1;
+      }
+
+      .description-column {
+        order: 2;
+
+        .social-icons {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(lg) {
+    &.float-right {
+      text-align: right;
+
+      .avatar-column {
+        order: 2;
+      }
+
+      .description-column {
+        order: 1;
+
+        .social-icons {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+
+  .person-name {
+    @include font-handwrite(600);
+    color: $dark-grey;
+    font-size: 2.25rem;
+    line-height: 3rem;
+
+    @include breakpoint(sm) {
+      margin-top: 2rem;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 0;
+    }
+  }
+
+  .description-author {
+    color: $brown;
+    margin-bottom: 2rem;
+    font-size: 0.9375rem;
+    @include font(300);
+  }
+
+  .description {
+    @include font(300);
+    font-size: 1.063rem;
+  }
+
+  .social-icons {}
+}

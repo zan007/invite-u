@@ -25,3 +25,29 @@
     }
   }
 }
+
+.fancy-divider {
+  display: block;
+
+  &.bottom {
+    .top-polygon {
+      fill: none;
+    }
+  }
+
+  &.top {
+    .top-polygon {
+      fill: none;
+    }
+
+    .left-bottom-polygon,
+    .right-bottom-polygon {
+      fill: $dark-milk-coffee;
+    }
+
+    .left-top-polygon,
+    .right-top-polygon {
+      fill: $milk-coffee;
+    }
+  }
+}

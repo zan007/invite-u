@@ -10,18 +10,20 @@
   .section-icon {
     font-size: 5rem;
     color: $brown;
-    position: absolute;
-    top: -50px;
-    right: 0;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+
+    .icon {
+      transition: all .3s ease;
+      display: inline-block;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 }
 
 section {
   position: relative;
-  min-height: 500px;
 
   .divider {
     position: absolute;
@@ -39,6 +41,10 @@ section {
     }
   }
 
+  .fancy-divider {
+    height: 200px;
+  }
+
   .bg {
     &:after {
       content: '';
@@ -51,7 +57,7 @@ section {
   }
 
   &.full-height {
-    height: 100vh;
+    min-height: 100vh;
   }
 
   &.bg-white {

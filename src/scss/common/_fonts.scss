@@ -1,105 +1,49 @@
 // Light
 @font-face {
-  font-family: "SourceSansPro_Light";
+  font-family: "Raleway-light";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/sourcesanspro-light.eot");
-  src: url("/assets/fonts/sourcesanspro-light.eot?#iefix") format("embedded-opentype"),
-    url("/assets/fonts/sourcesanspro-light.woff") format("woff"),
-    url("/assets/fonts/sourcesanspro-light.woff2") format("woff2"),
-    url("/assets/fonts/sourcesanspro-light.ttf") format("truetype"),
-    url("/assets/fonts/sourcesanspro-light.svg#sourcesanspro-light") format("svg");
-}
-
-// Light italic
-@font-face {
-  font-family: "SourceSansPro_Light_Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: url("/assets/fonts/sourcesanspro-lightitalic.eot");
-  src: url("/assets/fonts/sourcesanspro-lightitalic.eot?#iefix") format("embedded-opentype"),
-    url("/assets/fonts/sourcesanspro-lightitalic.woff") format("woff"),
-    url("/assets/fonts/sourcesanspro-lightitalic.woff2") format("woff2"),
-    url("/assets/fonts/sourcesanspro-lightitalic.ttf") format("truetype"),
-    url("/assets/fonts/sourcesanspro-lightitalic.svg#sourcesanspro-lightitalic") format("svg");
+  src: url("/assets/fonts/raleway-light.eot");
+  src: url("/assets/fonts/raleway-light.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/raleway-light.woff") format("woff"),
+    url("/assets/fonts/raleway-light.ttf") format("truetype"),
+    url("/assets/fonts/raleway-light.svg#raleway-light") format("svg");
 }
 
 // Regular
 @font-face {
-  font-family: "SourceSansPro_Regular";
+  font-family: "Raleway-regular";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/sourcesanspro-regular.eot");
-  src: url("/assets/fonts/sourcesanspro-regular.eot?#iefix") format("embedded-opentype"),
-    url("/assets/fonts/sourcesanspro-regular.woff") format("woff"),
-    url("/assets/fonts/sourcesanspro-regular.woff2") format("woff2"),
-    url("/assets/fonts/sourcesanspro-regular.ttf") format("truetype"),
-    url("/assets/fonts/sourcesanspro-regular.svg#sourcesanspro-regular") format("svg");
-}
-
-// Regular italic
-@font-face {
-  font-family: "SourceSansPro_Regular_Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: url("/assets/fonts/sourcesanspro-italic.eot");
-  src: url("/assets/fonts/sourcesanspro-italic.eot?#iefix") format("embedded-opentype"),
-    url("/assets/fonts/sourcesanspro-italic.woff") format("woff"),
-    url("/assets/fonts/sourcesanspro-italic.woff2") format("woff2"),
-    url("/assets/fonts/sourcesanspro-italic.ttf") format("truetype"),
-    url("/assets/fonts/sourcesanspro-italic.svg#sourcesanspro-italic") format("svg");
-}
-
-// Semi Bold
-@font-face {
-  font-family: "SourceSansPro_SemiBold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("/assets/fonts/sourcesanspro-semibold.eot");
-  src: url("/assets/fonts/sourcesanspro-semibold.eot?#iefix") format("embedded-opentype"),
-    url("/assets/fonts/sourcesanspro-semibold.woff") format("woff2"),
-    url("/assets/fonts/sourcesanspro-semibold.woff2") format("woff"),
-    url("/assets/fonts/sourcesanspro-semibold.ttf") format("truetype"),
-    url("/assets/fonts/sourcesanspro-semibold.svg#sourcesanspro-semibold") format("svg");
-}
-
-// Semi Bold Italic
-@font-face {
-  font-family: "SourceSansPro_SemiBold_Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: url("/assets/fonts/sourcesanspro-semibolditalic.eot");
-  src: url("/assets/fonts/sourcesanspro-semibolditalic.eot?#iefix") format("embedded-opentype"),
-    url("/assets/fonts/sourcesanspro-semibolditalic.woff") format("woff2"),
-    url("/assets/fonts/sourcesanspro-semibolditalic.woff2") format("woff"),
-    url("/assets/fonts/sourcesanspro-semibolditalic.ttf") format("truetype"),
-    url("/assets/fonts/sourcesanspro-semibolditalic.svg#sourcesanspro-semibolditalic") format("svg");
+  src: url("/assets/fonts/raleway-regular.eot");
+  src: url("/assets/fonts/raleway-regular.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/raleway-regular.woff") format("woff"),
+    url("/assets/fonts/raleway-regular.ttf") format("truetype"),
+    url("/assets/fonts/raleway-regular.svg#raleway-regular") format("svg");
 }
 
 // Bold
 @font-face {
-  font-family: "SourceSansPro_Bold";
+  font-family: "Raleway-bold";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/sourcesanspro-bold.eot");
-  src: url("/assets/fonts/sourcesanspro-bold.eot?#iefix") format("embedded-opentype"),
-    url("/assets/fonts/sourcesanspro-bold.woff") format("woff2"),
-    url("/assets/fonts/sourcesanspro-bold.woff2") format("woff"),
-    url("/assets/fonts/sourcesanspro-bold.ttf") format("truetype"),
-    url("/assets/fonts/sourcesanspro-bold.svg#sourcesanspro-bold") format("svg");
+  src: url("/assets/fonts/raleway-bold.eot");
+  src: url("/assets/fonts/raleway-bold.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/raleway-bold.woff") format("woff2"),
+    url("/assets/fonts/raleway-bold.ttf") format("truetype"),
+    url("/assets/fonts/raleway-bold.svg#raleway-bold") format("svg");
 }
 
-// Bold Italic
+// Medium
 @font-face {
-  font-family: "SourceSansPro_Bold_Italic";
+  font-family: "Raleway-medium";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/sourcesanspro-bolditalic.eot");
-  src: url("/assets/fonts/sourcesanspro-bolditalic.eot?#iefix") format("embedded-opentype"),
-    url("/assets/fonts/sourcesanspro-bolditalic.woff") format("woff2"),
-    url("/assets/fonts/sourcesanspro-bolditalic.woff2") format("woff"),
-    url("/assets/fonts/sourcesanspro-bolditalic.ttf") format("truetype"),
-    url("/assets/fonts/sourcesanspro-bolditalic.svg#sourcesanspro-bolditalic") format("svg");
+  src: url("/assets/fonts/raleway-medium.eot");
+  src: url("/assets/fonts/raleway-medium.eot?#iefix") format("embedded-opentype"),
+  url("/assets/fonts/raleway-medium.woff") format("woff2"),
+  url("/assets/fonts/raleway-medium.ttf") format("truetype"),
+  url("/assets/fonts/raleway-medium.svg#raleway-medium") format("svg");
 }
 
 // Allura handwrite Regular

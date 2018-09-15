@@ -1,0 +1,13 @@
+.avatar {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: solid 8px $white;
+  overflow: hidden;
+  margin: 0 auto;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

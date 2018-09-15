@@ -1,0 +1,63 @@
+.widget-event {
+  .title {
+    color: $white;
+    font-size: 5rem;
+    @include font-handwrite(400);
+    text-shadow: 0em 0.1em 0.8em rgba(0,0,0,0.1);
+    padding-top: 4rem;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(180deg, $dark-milk-coffee 0%, $almond 100%);
+  }
+
+  .subtitle {
+    font-size: 0.9375rem;
+    color: $brown;
+    margin-bottom: 0;
+  }
+
+  .event-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    margin: 2rem 0;
+
+    .detail {
+      color: $dark-grey;
+      max-width: 13rem;
+      margin-top: 1rem;
+
+      .icon {
+        font-size: 6rem;
+        color: $brown;
+        display: inline-block;
+        line-height: 1;
+        transition: all .3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      .detail-title {
+        font-size: 1.875rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        line-height: 1.875rem;
+        @include font(300);
+      }
+
+      .date,
+      .time {
+        font-size: 2rem;
+        line-height: 2.2rem;
+        @include font-handwrite(600);
+      }
+
+      .place {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

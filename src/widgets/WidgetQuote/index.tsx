@@ -4,7 +4,8 @@ import {Row, Col} from "components/grid"
 import "./WidgetQuote.scss"
 
 interface IProps {
-  title?: string,
+  name?: string
+  title?: string
 }
 
 interface IState {}

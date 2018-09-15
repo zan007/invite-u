@@ -50,45 +50,22 @@
 // Font weights
 @mixin font($weight: 300) {
   @if $weight == 300 {
-    font-family: "SourceSansPro_Light", sans-serif;
+    font-family: "Raleway-light", sans-serif;
     font-weight: 300;
   }
 
   @if $weight == 400 {
-    font-family: "SourceSansPro_Regular", sans-serif;
+    font-family: "Raleway-regular", sans-serif;
     font-weight: 400;
   }
 
   @if $weight == 600 {
-    font-family: "SourceSansPro_SemiBold", sans-serif;
+    font-family: "Raleway-medium", sans-serif;
     font-weight: 600;
   }
 
   @if $weight == 700 {
-    font-family: "SourceSansPro_Bold", sans-serif;
-    font-weight: 700;
-  }
-}
-
-// Font weights (italic)
-@mixin font-italic($weight: 300) {
-  @if $weight == 300 {
-    font-family: "SourceSansPro_Light_Italic", sans-serif;
-    font-weight: 300;
-  }
-
-  @if $weight == 400 {
-    font-family: "SourceSansPro_Regular_Italic", sans-serif;
-    font-weight: 400;
-  }
-
-  @if $weight == 600 {
-    font-family: "SourceSansPro_SemiBold_Italic", sans-serif;
-    font-weight: 600;
-  }
-
-  @if $weight == 700 {
-    font-family: "SourceSansPro_Bold_Italic", sans-serif;
+    font-family: "Raleway-bold", sans-serif;
     font-weight: 700;
   }
 }

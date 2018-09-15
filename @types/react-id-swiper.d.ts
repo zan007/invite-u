@@ -16,11 +16,29 @@ declare module "react-id-swiper" {
     prevEl: string
   }
 
+  interface IOptsCoverFlowEffect {
+    rotate?: number,
+    stretch?: number,
+    depth?: number,
+    modifier?: number,
+    slideShadows?: boolean
+  }
+
+  interface IOptsCubeEffect {
+    shadow?: boolean,
+    slideShadows?: boolean,
+    shadowOffset?: number,
+    shadowScale?: number
+  }
+
   interface ISwiperOpts {
     loop?: boolean
     observer?: boolean
     roundLengths?: boolean
     speed?: number
+    effect?: "coverflow" | "cube" | "fade",
+    coverflowEffect?: IOptsCoverFlowEffect,
+    cubeEffect?: IOptsCubeEffect,
     autoplay?: IOptsAutoplay | boolean
     pagination?: IOptsPagination
     navigation?: IOptsNavigation

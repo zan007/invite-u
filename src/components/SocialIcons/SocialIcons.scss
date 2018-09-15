@@ -1,0 +1,30 @@
+.social-icons {
+  display: flex;
+  margin-top: 1rem;
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px $brown;
+    border-radius: 50%;
+    background-color: $brown;
+    color: $white;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    font-size: 1.25rem;
+    text-align: center;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      background-color: $dark-grey;
+      border-color: $dark-grey;
+      transform: scale(1.1);
+    }
+
+    .icon {
+      line-height: inherit;
+    }
+  }
+}

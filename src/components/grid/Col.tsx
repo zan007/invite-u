@@ -9,6 +9,9 @@ interface IProps {
   small?: COLUMNS_NUMBER
   medium?: COLUMNS_NUMBER
   large?: COLUMNS_NUMBER
+  smallOrder?: number
+  mediumOrder?: number
+  largeOrder?: number
   shrink?: boolean
   expand?: boolean
 }
@@ -19,6 +22,9 @@ const Col: React.StatelessComponent<IProps> = ({
   small,
   medium,
   large,
+  smallOrder,
+  mediumOrder,
+  largeOrder,
   shrink = false,
   expand = false,
 }: IProps) => {
@@ -27,6 +33,9 @@ const Col: React.StatelessComponent<IProps> = ({
     shrink,
     expand,
     [className]: Boolean(className),
+    [`medium-order-${smallOrder}`]: Boolean(smallOrder),
+    [`medium-order-${mediumOrder}`]: Boolean(mediumOrder),
+    [`medium-order-${largeOrder}`]: Boolean(largeOrder),
     [`small-${small}`]: Boolean(small),
     [`medium-${medium}`]: Boolean(medium),
     [`large-${large}`]: Boolean(large),

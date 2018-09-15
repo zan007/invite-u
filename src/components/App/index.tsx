@@ -4,6 +4,7 @@ import {HashRouter as Router} from "react-router-dom"
 import {store} from "redux/store"
 import * as smoothscroll from "smoothscroll-polyfill"
 import "scss/main.scss"
+import {Modals} from "../Modals/index"
 
 import {AppLoaderContainer} from "containers/AppLoaderContainer"
 import {PagesContainer} from "containers/PagesContainer"
@@ -21,6 +22,7 @@ class AppComponent extends React.Component {
           <Router>
             <PagesContainer />
           </Router>
+          <Modals/>
         </AppLoaderContainer>
       </Provider>
     )

@@ -27,7 +27,6 @@ class WidgetHeader extends React.Component<IProps> {
             <h1 className="title text-center">{title}</h1>
             <hr/>
             <h3 className="subtitle text-center">{subtitle}</h3>
-            <Icon name={"couple"}/>
           </Col>
         </Row>
       </header>

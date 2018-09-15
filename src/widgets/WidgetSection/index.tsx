@@ -16,6 +16,8 @@ interface IProps {
   icon?: IconName
   bottomDivider?: boolean,
   topDivider?: boolean
+  fancyBottomDivider?: boolean
+  fancyTopDivider?: boolean
 }
 
 class WidgetSection extends React.Component<IProps> {
@@ -30,6 +32,8 @@ class WidgetSection extends React.Component<IProps> {
       icon,
       bottomDivider,
       topDivider,
+      fancyBottomDivider,
+      fancyTopDivider,
     } = this.props
 
     return (
@@ -42,6 +46,8 @@ class WidgetSection extends React.Component<IProps> {
         icon={icon}
         bottomDivider={bottomDivider}
         topDivider={topDivider}
+        fancyBottomDivider={fancyBottomDivider}
+        fancyTopDivider={fancyTopDivider}
       >
         <WidgetsList items={widgets} />
       </Section>

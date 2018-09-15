@@ -1,0 +1,13 @@
+.modal {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  .icon-close {
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+  }
+}

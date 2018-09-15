@@ -8,7 +8,6 @@ import {BackgroundImage} from "components/BackgroundImage"
 import {InView} from "components/InView"
 import {Scroll} from "components/Scroll"
 import {IconName} from "components/Icon"
-import {Row, Col} from "components/grid"
 import {Divider} from "components/Divider"
 import {SectionTitle} from "./SectionTitle"
 
@@ -20,9 +19,11 @@ interface IProps {
   image?: Asset
   position?: "left" | "right"
   fullHeight?: boolean
-  scroll?: "down" | "up",
-  bottomDivider?: boolean,
+  scroll?: "down" | "up"
+  bottomDivider?: boolean
   topDivider?: boolean
+  fancyTopDivider?: boolean
+  fancyBottomDivider?: boolean
 }
 
 const Section: React.SFC<IProps> = ({
@@ -35,6 +36,8 @@ const Section: React.SFC<IProps> = ({
   fullHeight = false,
   topDivider = false,
   bottomDivider = false,
+  fancyTopDivider = false,
+  fancyBottomDivider = false,
   scroll,
 }) => {
   const classList = classnames({
@@ -52,16 +55,12 @@ const Section: React.SFC<IProps> = ({
           />
         }
         {topDivider &&
-          <div className={"top-divider"}>
-            <Divider top={true}/>
-          </div>
+          <Divider top={true} fancy={fancyTopDivider}/>
         }
         <SectionTitle icon={icon} title={title}/>
         {children}
         {bottomDivider &&
-          <div className={"bottom-divider"}>
-            <Divider bottom={true}/>
-          </div>
+          <Divider bottom={true} fancy={fancyBottomDivider}/>
         }
         {scroll &&
           <Scroll direction={scroll} />

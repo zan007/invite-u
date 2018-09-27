@@ -10,7 +10,7 @@ interface IProps {
   fullHeight?: boolean
   widgets: Array<Entry<any>>
   imageBackground?: Asset
-  imagePosition: "left" | "right"
+  backgroundPosition: "left" | "right" | "center"
   color?: ColorNames
   title?: string
   icon?: IconName
@@ -27,7 +27,7 @@ class WidgetSection extends React.Component<IProps> {
       fullHeight,
       widgets,
       imageBackground,
-      imagePosition,
+      backgroundPosition,
       title,
       icon,
       bottomDivider,
@@ -41,7 +41,7 @@ class WidgetSection extends React.Component<IProps> {
         color={backgroundColor}
         fullHeight={fullHeight}
         image={imageBackground}
-        position={imagePosition}
+        backgroundPosition={backgroundPosition}
         title={title}
         icon={icon}
         bottomDivider={bottomDivider}

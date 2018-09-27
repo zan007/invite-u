@@ -17,7 +17,7 @@ interface IProps {
   title?: string
   icon?: IconName
   image?: Asset
-  position?: "left" | "right"
+  backgroundPosition?: "left" | "right" | "center"
   fullHeight?: boolean
   scroll?: "down" | "up"
   bottomDivider?: boolean
@@ -32,7 +32,7 @@ const Section: React.SFC<IProps> = ({
   title,
   icon,
   image,
-  position = "left",
+  backgroundPosition = "left",
   fullHeight = false,
   topDivider = false,
   bottomDivider = false,
@@ -48,9 +48,9 @@ const Section: React.SFC<IProps> = ({
   return (
     <InView>
       <section className={classList}>
-        {(image && position) &&
+        {(image && backgroundPosition) &&
           <BackgroundImage
-            position={position}
+            position={backgroundPosition}
             image={image}
           />
         }

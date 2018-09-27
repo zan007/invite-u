@@ -17,7 +17,7 @@ const StyleguideLayout: React.SFC<IProps> = () => {
   return (
     <>
       <Section
-        position="right"
+        backgroundPosition={"right"}
         image={image}
         fullHeight={true}
         scroll="down"

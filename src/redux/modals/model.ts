@@ -1,7 +1,7 @@
 import {Record} from "immutable"
 
 export interface IModals {
-  id: number,
+  id: string,
   content: any
 }
 

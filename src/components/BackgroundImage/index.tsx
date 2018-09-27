@@ -5,7 +5,7 @@ import {Asset} from "contentful"
 import "./BackgroundImage.scss"
 
 interface IBackgroundImageProps {
-  position: "left" | "right"
+  position: "left" | "right" | "center"
   image: Asset
 }
 

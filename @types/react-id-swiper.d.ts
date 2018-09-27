@@ -36,12 +36,16 @@ declare module "react-id-swiper" {
     observer?: boolean
     roundLengths?: boolean
     speed?: number
+    slideChangeCallback?: (swiper: Swiper) => void,
+    initCallback?: (swiper: Swiper) => void,
     effect?: "coverflow" | "cube" | "fade",
     coverflowEffect?: IOptsCoverFlowEffect,
     cubeEffect?: IOptsCubeEffect,
     autoplay?: IOptsAutoplay | boolean
     pagination?: IOptsPagination
     navigation?: IOptsNavigation
+    preventClicks?: boolean
+    slideToClickedSlide?: boolean
     centeredSlides?: boolean
     autoHeight?: boolean
     initialSlide?: number
@@ -51,5 +55,11 @@ declare module "react-id-swiper" {
 
   export {ISwiperOpts}
 
-  export default class Swiper extends React.Component<ISwiperOpts, any> {}
+  export default class Swiper extends React.Component<ISwiperOpts, any> {
+    on: (event: string, callback: () => void) => void
+    realIndex: number
+    updateSize: () => void
+    updateSlides: () => void
+    slideTo: (index: number, speed?: number) => void
+  }
 }

@@ -33,11 +33,9 @@ class WidgetStory extends React.Component<IProps, IState> {
             />
           </Col>
         </Row>
-        <Row>
-          <Col small={12}>
-            <Gallery images={images}/>
-          </Col>
-        </Row>
+        <div>
+          <Gallery images={images}/>
+        </div>
       </div>
     )
   }

@@ -1,0 +1,18 @@
+.widget-see-at-map {
+  .map-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      margin-left: 0.5rem;
+      font-size: 2rem;
+    }
+
+    &:hover {
+      .icon {
+        color: inherit;
+      }
+    }
+  }
+}

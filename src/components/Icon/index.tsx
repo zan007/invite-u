@@ -27,6 +27,7 @@ export type IconName = "arrow-down" |
   "russia-building" |
   "twitter" |
   "volume" |
+  "map-location" |
   "couple" |
   "instagram" |
   "hearts" |

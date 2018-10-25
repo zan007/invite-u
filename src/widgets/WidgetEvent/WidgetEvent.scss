@@ -28,7 +28,6 @@
       margin-top: 1rem;
 
       .icon {
-        font-size: 6rem;
         color: $brown;
         display: inline-block;
         line-height: 1;
@@ -39,12 +38,20 @@
         }
       }
 
+      .main-icon {
+        font-size: 6rem;
+      }
+
       .detail-title {
         font-size: 1.875rem;
         margin-top: 1rem;
+        min-height: 3.7rem;
         margin-bottom: 1rem;
         line-height: 1.875rem;
         @include font(300);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
       }
 
       .date,

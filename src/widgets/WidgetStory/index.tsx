@@ -26,7 +26,7 @@ class WidgetStory extends React.Component<IProps, IState> {
     return (
       <div className={"widget-story"}>
         <Row hAlign={"center"} vAlign={"middle"} >
-          <Col small={6} className={"text-center"}>
+          <Col small={6} className={"text-center animation fade-in delay-2"}>
             <Markdown
               escapeHtml={true}
               source={text}

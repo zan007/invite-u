@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const SectionTitle: React.SFC<IProps> = ({icon, title, children}) => (
-  <Row hAlign={"center"} className={"section-title"}>
+  <Row hAlign={"center"} className={"section-title animation fade-in"}>
     <Col small={12} className={"text-center"}>
       <div className={"section-icon"}>
         {icon && <Icon name={icon}/>}

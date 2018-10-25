@@ -4,6 +4,7 @@ import {Row, Col} from "components/grid"
 import "./WidgetEvent.scss"
 import {Icon, IconName} from "components/Icon"
 import {Entry} from "contentful"
+import {WidgetsList} from "../../components/WidgetsList"
 
 interface IEventDetails {
   name: string
@@ -13,6 +14,7 @@ interface IEventDetails {
   time: string
   place: string
   link: string
+  additionalDetails: Array<Entry<any>>
 }
 
 interface IProps {
@@ -32,13 +34,21 @@ class WidgetEvent extends React.Component<IProps, IState> {
   }
 
   render() {
-    const {title, subtitle, eventDetails} = this.props;
+    const {title, subtitle, eventDetails} = this.props
 
     return (
       <div className={"widget-event"}>
         <div className={"text-center"}>
-          <h1 className={"title"}>{title}</h1>
-          <h5 className={"subtitle"}>{subtitle}</h5>
+          <h1 className={"title"}>
+            <span className={"animation fade-in delay-1"}>
+              {title}
+              </span>
+          </h1>
+          <h5 className={"subtitle"}>
+              <span className={"animation fade-in delay-2"}>
+                {subtitle}
+              </span>
+          </h5>
         </div>
         <Row>
           <Col small={12}>
@@ -47,14 +57,17 @@ class WidgetEvent extends React.Component<IProps, IState> {
                 const detailFields = detail.fields
 
                 return (
-                  <div className={"detail"} key={index}>
-                    <a href={detailFields.link} role={"button"}>
+                  <div className={"detail animation fade-in delay-2"} key={index}>
+                    <a href={detailFields.link} role={"button"} className={"main-icon"}>
                       <Icon name={detailFields.icon}/>
                     </a>
                     <div className={"detail-title"}>{detailFields.title}</div>
                     <div className={"date"}>{detailFields.date}</div>
                     <div className={"time"}>{detailFields.time}</div>
                     <div className={"place"}>{detailFields.place}</div>
+                    <div className={"additional-details"}>
+                      {detailFields.additionalDetails && <WidgetsList items={detailFields.additionalDetails} />}
+                    </div>
                   </div>
                 )
               })}

@@ -23,6 +23,7 @@
     "@types/enzyme": "^3.1.5",
     "@types/history": "^4.6.2",
     "@types/jest": "^22.2.0",
+    "@types/googlemaps": "^3.30.13",
     "@types/react": "^16.0.26",
     "@types/react-dom": "^16.0.3",
     "@types/react-hot-loader": "^3.0.5",
@@ -35,6 +36,8 @@
     "copy-webpack-plugin": "^4.5.0",
     "css-loader": "^0.28.10",
     "enzyme": "^3.2.0",
+    "googlemaps": "^1.12.0",
+    "google-maps-api-loader": "^1.1.1",
     "enzyme-adapter-react-16": "^1.1.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
@@ -57,6 +60,7 @@
     "tslint-microsoft-contrib": "^5.0.3",
     "tslint-react": "^3.2.0",
     "typescript": "^2.6.2",
+    "scriptjs": "^2.5.9",
     "webfonts-generator": "^0.4.0",
     "webpack": "^4.0.1",
     "webpack-cli": "^2.0.13",
@@ -119,7 +123,8 @@
     ],
     "globals": {
       "__CONTENTFUL_SPACE_ID__": "__CONTENTFUL_SPACE_ID__",
-      "__CONTENTFUL_ACCESS_TOKEN__": "__CONTENTFUL_ACCESS_TOKEN__"
+      "__CONTENTFUL_ACCESS_TOKEN__": "__CONTENTFUL_ACCESS_TOKEN__",
+      "__GOOGLE_MAPS_API_KEY__": "__GOOGLE_MAPS_API_KEY__"
     }
   }
 }

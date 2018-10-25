@@ -33,6 +33,7 @@ module.exports = {
     return new webpack.DefinePlugin({
       __CONTENTFUL_SPACE_ID__: JSON.stringify(CONFIG.CONTENTFUL_SPACE_ID),
       __CONTENTFUL_ACCESS_TOKEN__: JSON.stringify(CONFIG.CONTENTFUL_ACCESS_TOKEN),
+      __GOOGLE_MAPS_API_KEY__: JSON.stringify(CONFIG.GOOGLE_MAPS_API_KEY),
     })
   }
-}
+};

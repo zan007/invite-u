@@ -32,10 +32,10 @@ const PersonDetails: React.SFC<IPersonDetailsProps> = ({
 
   return (
     <Row className={containerClassNames} vAlign={"middle"}>
-      <Col small={12} large={6} className={"avatar-column"}>
+      <Col small={12} large={6} className={"avatar-column animation fade-in delay-1"}>
         <Avatar image={avatar.fields.file.url} title={avatar.fields.title}/>
       </Col>
-      <Col small={12} large={6} className={"description-column"}>
+      <Col small={12} large={6} className={"description-column animation fade-in delay-2"}>
         <div className={"person-name"}>
           {name}
         </div>

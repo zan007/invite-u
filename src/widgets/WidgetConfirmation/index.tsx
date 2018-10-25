@@ -18,7 +18,7 @@ class WidgetConfirmation extends React.Component<IProps, IState> {
 
   render() {
     return (
-      <Row hAlign={"center"} vAlign={"middle"} className={"widget-quote"}>
+      <Row hAlign={"center"} vAlign={"middle"} className={"widget-quote animation fade-in"}>
         <Col small={12} medium={6} className={"text-center"}>
           {this.props.title && <h3>{this.props.title}</h3>}
         </Col>

@@ -12,7 +12,7 @@ interface IProps {
 const WidgetFooter: React.SFC<IProps> = ({title, icon}) => (
   <footer className={"footer"}>
     <Row hAlign={"center"}>
-      <Col className={"section-title text-center"}>
+      <Col className={"section-title text-center animation fade-in"}>
         {icon &&
         <div className={"section-icon"}>
           <Icon name={icon}/>

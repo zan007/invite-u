@@ -1,0 +1,40 @@
+.animate-on-scroll {
+  opacity: 0;
+
+
+  &.scale-in {
+    transform: scale(0);
+  }
+
+  &.entering {
+    .in-view & {
+
+
+      &.fade-in {
+        opacity: 1;
+      }
+
+      &.scale-in {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &.entered {
+    .in-view & {
+
+
+      &.fade-in {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      &.scale-in {
+        opacity: 1;
+        transform: scale(1);
+        transition: none;
+      }
+    }
+  }
+}

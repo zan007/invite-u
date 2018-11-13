@@ -6,6 +6,7 @@ import {Avatar} from "components/Avatar"
 import {ISocialProfile} from "models/socialProfile"
 import {SocialIcons} from "components/SocialIcons"
 import * as classnames from "classnames"
+import {AnimateOnScroll} from "../AnimateOnScroll"
 
 interface IPersonDetailsProps {
   avatar: Asset
@@ -32,22 +33,28 @@ const PersonDetails: React.SFC<IPersonDetailsProps> = ({
 
   return (
     <Row className={containerClassNames} vAlign={"middle"}>
-      <Col small={12} large={6} className={"avatar-column animation fade-in delay-1"}>
-        <Avatar image={avatar.fields.file.url} title={avatar.fields.title}/>
+      <Col small={12} large={6} className={"avatar-column"}>
+        <AnimateOnScroll visible={true} duration={300} effect={"scaleIn"}>
+          <Avatar image={avatar.fields.file.url} title={avatar.fields.title}/>
+        </AnimateOnScroll>
       </Col>
-      <Col small={12} large={6} className={"description-column animation fade-in delay-2"}>
-        <div className={"person-name"}>
-          {name}
-        </div>
-        <div className={"description-author"}>
-          {descriptionAuthor}
-        </div>
-        <div className={"description"}>
-          {description}
-        </div>
-        <div className={"social-icons"}>
-          <SocialIcons {...socialProfiles.fields} />
-        </div>
+      <Col small={12} large={6} className={"description-column"}>
+        <AnimateOnScroll visible={true} duration={500}>
+          <>
+            <div className={"person-name"}>
+              {name}
+            </div>
+            <div className={"description-author"}>
+              {descriptionAuthor}
+            </div>
+            <div className={"description"}>
+              {description}
+            </div>
+            <div className={"social-icons"}>
+              <SocialIcons {...socialProfiles.fields} />
+            </div>
+          </>
+        </AnimateOnScroll>
       </Col>
     </Row>
   )

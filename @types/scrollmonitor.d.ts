@@ -10,6 +10,7 @@ declare module "scrollmonitor" {
     enterViewport(cb: Function): void
     exitViewport(cb: Function): void
     stateChange(cb: Function): void
+    lock(): void
     fullyEnterViewport(cb: Function): void
     partiallyExitViewport(cb: Function): void
 

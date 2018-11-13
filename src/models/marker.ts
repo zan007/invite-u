@@ -1,6 +1,6 @@
 export interface IMarker {
   name: string
-  description: string,
+  description: string
   lat: number
   lng: number
 }

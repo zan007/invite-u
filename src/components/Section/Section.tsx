@@ -12,6 +12,8 @@ import {Divider} from "components/Divider"
 import {SectionTitle} from "./SectionTitle"
 
 interface IProps {
+  name: string
+  anchor?: string
   children?: any
   color?: ColorNames
   title?: string
@@ -29,6 +31,8 @@ interface IProps {
 const Section: React.SFC<IProps> = ({
   children,
   color,
+  name,
+  anchor,
   title,
   icon,
   image,
@@ -47,7 +51,7 @@ const Section: React.SFC<IProps> = ({
 
   return (
     <InView>
-      <section className={classList}>
+      <section className={classList} id={anchor}>
         {(image && backgroundPosition) &&
           <BackgroundImage
             position={backgroundPosition}

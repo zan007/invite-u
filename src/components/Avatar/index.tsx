@@ -9,7 +9,7 @@ interface IAvatarProps {
 const Avatar: React.SFC<IAvatarProps> = ({image, title}) => {
 
   return (
-    <div className={"avatar"}>
+    <div className={"avatar animation scale-in"}>
       {image && <img src={image} alt={title} />}
     </div>
   )

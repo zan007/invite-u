@@ -86,25 +86,3 @@
 a {
   color: $brown;
 }
-
-.animation {
-  &.fade-in {
-    .in-view & {
-      animation: fadeIn .75s .25s ease both;
-      opacity: 0;
-      transition: all .5s linear;
-
-      &.delay-1 {
-        animation-delay: .5s;
-      }
-
-      &.delay-2 {
-        animation-delay: .75s;
-      }
-
-      &.delay-3 {
-        animation-delay: 1s;
-      }
-    }
-  }
-}

@@ -6,8 +6,10 @@ import {ColorNames} from "models/colorNames"
 import {IconName} from "../../components/Icon"
 
 interface IProps {
+  name: string
   backgroundColor?: ColorNames
   fullHeight?: boolean
+  anchor?: string
   widgets: Array<Entry<any>>
   imageBackground?: Asset
   backgroundPosition: "left" | "right" | "center"
@@ -23,6 +25,7 @@ interface IProps {
 class WidgetSection extends React.Component<IProps> {
   render() {
     const {
+      name,
       backgroundColor,
       fullHeight,
       widgets,
@@ -31,6 +34,7 @@ class WidgetSection extends React.Component<IProps> {
       title,
       icon,
       bottomDivider,
+      anchor,
       topDivider,
       fancyBottomDivider,
       fancyTopDivider,
@@ -38,6 +42,8 @@ class WidgetSection extends React.Component<IProps> {
 
     return (
       <Section
+        name={name}
+        anchor={anchor}
         color={backgroundColor}
         fullHeight={fullHeight}
         image={imageBackground}

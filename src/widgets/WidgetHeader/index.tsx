@@ -5,6 +5,7 @@ import {BackgroundImage} from "../../components/BackgroundImage"
 import {Row, Col} from "components/grid/index"
 import {Divider} from "components/Divider"
 import {Icon} from "components/Icon"
+import {AnimateOnScroll} from "../../components/AnimateOnScroll"
 
 interface IProps {
   title: string
@@ -19,14 +20,18 @@ class WidgetHeader extends React.Component<IProps> {
     return (
       <header className="main-header">
         <BackgroundImage
-          position={"left"}
+          position={"center"}
           image={background}
         />
         <Row hAlign={"center"} collapse={true} vAlign={"middle"} className={"full-height"}>
           <Col small={12}>
-            <h1 className="title text-center">{title}</h1>
-            <hr/>
-            <h3 className="subtitle text-center">{subtitle}</h3>
+            <AnimateOnScroll visible={true} duration={1000}>
+              <>
+                <h1 className="title text-center">{title}</h1>
+                <hr/>
+                <h3 className="subtitle text-center">{subtitle}</h3>
+              </>
+            </AnimateOnScroll>
           </Col>
         </Row>
       </header>

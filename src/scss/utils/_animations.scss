@@ -100,3 +100,49 @@
     @include translate(0, 0, 0);
   }
 }
+
+.animation {
+  opacity: 0;
+
+  &.fade-in {
+    .in-view & {
+      animation: fadeIn .75s .25s ease both;
+      transition: all .5s linear;
+    }
+  }
+
+  .delay-1 {
+    animation-delay: .5s;
+  }
+
+  .delay-2 {
+    animation-delay: .75s;
+  }
+
+  .delay-3 {
+    animation-delay: 1s;
+  }
+
+  .delay-4 {
+    animation-delay: 1.25s;
+  }
+
+  .delay-5 {
+    animation-delay: 1.5s;
+  }
+
+  .delay-6 {
+    animation-delay: 1.75s;
+  }
+
+  .delay-7 {
+    animation-delay: 2s;
+  }
+
+  &.scale-in {
+    .in-view & {
+      animation: scaleIn .75s .25s ease both;
+      transition: all .5s linear;
+    }
+  }
+}

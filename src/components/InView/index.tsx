@@ -4,8 +4,11 @@ import * as classnames from "classnames"
 
 const WATCHER_OFFSET = {top: 0, bottom: -100}
 
-interface IProps {}
-
+interface IProps {
+  anchor?: string
+  whenFullyVisible?: boolean
+  callback?: () => void
+}
 interface IState {
   inView: boolean
 }
@@ -45,7 +48,17 @@ class InView extends React.PureComponent<IProps, IState> {
   }
 
   private toggleInViewClass = () => {
-    this.setState({inView: this.watcher.isInViewport})
+    const watcherValue = this.props.whenFullyVisible ? this.watcher.isFullyInViewport : this.watcher.isInViewport
+
+    this.setState({inView: watcherValue})
+    if (this.props.callback && watcherValue) {
+      this.props.callback()
+    }
+/*
+    if (this.props.anchor) {
+      console.log(window.location, this.props.anchor)
+      window.location.hash = this.props.anchor
+    }*/
   }
 }
 

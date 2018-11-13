@@ -5,6 +5,7 @@ import "./WidgetStory.scss"
 import {Asset} from "contentful"
 import Markdown from "react-markdown";
 import {Gallery} from "../../components/Gallery"
+import {AnimateOnScroll} from "../../components/AnimateOnScroll"
 
 interface IProps {
   name: string,
@@ -25,14 +26,17 @@ class WidgetStory extends React.Component<IProps, IState> {
 
     return (
       <div className={"widget-story"}>
-        <Row hAlign={"center"} vAlign={"middle"} >
-          <Col small={6} className={"text-center animation fade-in delay-2"}>
-            <Markdown
-              escapeHtml={true}
-              source={text}
-            />
-          </Col>
-        </Row>
+        <AnimateOnScroll visible={true} duration={500}>
+          <Row hAlign={"center"} vAlign={"middle"} >
+              <Col small={6} className={"text-center"}>
+                <Markdown
+                  escapeHtml={true}
+                  source={text}
+                />
+              </Col>
+
+          </Row>
+        </AnimateOnScroll>
         <div>
           <Gallery images={images}/>
         </div>

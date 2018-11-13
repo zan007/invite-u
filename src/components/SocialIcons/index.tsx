@@ -16,19 +16,19 @@ const SocialIcons: React.SFC<ISocialIconsProps> = ({facebook, twitter, instagram
   return (
     <div className={"social-icons"}>
       {facebook &&
-        <a href={facebook} target="_blank" role="button" className="icon-container">
+        <a href={facebook} target="_blank" role="button" className="icon-container animation scale-in delay-3">
           <Icon name={"facebook"}/>
         </a>}
       {twitter &&
-        <a href={twitter} target="_blank" role="button" className="icon-container">
+        <a href={twitter} target="_blank" role="button" className="icon-container animation scale-in delay-3">
           <Icon name={"twitter"}/>
         </a>}
       {instagram &&
-        <a href={instagram} target="_blank" role="button" className="icon-container">
+        <a href={instagram} target="_blank" role="button" className="icon-container animation scale-in delay-3">
           <Icon name={"instagram"}/>
         </a>}
       {linkedIn &&
-        <a href={linkedIn} target="_blank" role="button" className="icon-container">
+        <a href={linkedIn} target="_blank" role="button" className="icon-container animation scale-in delay-3">
           <Icon name={"linkedin"}/>
         </a>}
     </div>

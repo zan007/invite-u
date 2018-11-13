@@ -2,6 +2,7 @@
 import * as React from "react"
 import {Row, Col} from "components/grid"
 import "./WidgetConfirmation.scss"
+import {AnimateOnScroll} from "../../components/AnimateOnScroll"
 
 interface IProps {
   title?: string,
@@ -18,11 +19,13 @@ class WidgetConfirmation extends React.Component<IProps, IState> {
 
   render() {
     return (
-      <Row hAlign={"center"} vAlign={"middle"} className={"widget-quote animation fade-in"}>
-        <Col small={12} medium={6} className={"text-center"}>
-          {this.props.title && <h3>{this.props.title}</h3>}
-        </Col>
-      </Row>
+      <AnimateOnScroll visible={true} duration={500}>
+        <Row hAlign={"center"} vAlign={"middle"} className={"widget-quote"}>
+          <Col small={12} medium={6} className={"text-center"}>
+            {this.props.title && <h3>{this.props.title}</h3>}
+          </Col>
+        </Row>
+      </AnimateOnScroll>
     )
   }
 }

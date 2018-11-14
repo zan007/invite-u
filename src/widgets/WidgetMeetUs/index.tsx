@@ -1,10 +1,7 @@
 
 import * as React from "react"
-import {Asset, Entry, EntryCollection} from "contentful"
-import {Link} from "react-router-dom"
-import {Row, Col} from "components/grid"
-import {ISocialProfile} from "models/socialProfile"
-import {Avatar} from "components/Avatar"
+import {Asset, Entry} from "contentful"
+import {ISocialLink} from "models/socialLink"
 import {PersonDetails} from "components/PersonDetails"
 
 interface INewlyweds {
@@ -12,7 +9,7 @@ interface INewlyweds {
   name: string,
   description: string
   descriptionAuthor: string
-  socialProfiles: Entry<ISocialProfile>
+  socialProfiles: Array<Entry<ISocialLink>>
 }
 
 interface IProps {

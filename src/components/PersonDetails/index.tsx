@@ -3,10 +3,10 @@ import "./PersonDetails.scss"
 import {Asset, Entry} from "contentful"
 import {Row, Col} from "components/grid"
 import {Avatar} from "components/Avatar"
-import {ISocialProfile} from "models/socialProfile"
-import {SocialIcons} from "components/SocialIcons"
+import {SocialIcon} from "components/SocialIcon"
 import * as classnames from "classnames"
 import {AnimateOnScroll} from "../AnimateOnScroll"
+import {ISocialLink} from "../../models/socialLink"
 
 interface IPersonDetailsProps {
   avatar: Asset
@@ -14,7 +14,7 @@ interface IPersonDetailsProps {
   name: string
   descriptionAuthor: string
   description: string
-  socialProfiles: Entry<ISocialProfile>
+  socialProfiles: Array<Entry<ISocialLink>>
 }
 
 const PersonDetails: React.SFC<IPersonDetailsProps> = ({
@@ -51,7 +51,13 @@ const PersonDetails: React.SFC<IPersonDetailsProps> = ({
               {description}
             </div>
             <div className={"social-icons"}>
-              <SocialIcons {...socialProfiles.fields} />
+              {socialProfiles.map((socialProfile, index) => {
+                return (
+                  <AnimateOnScroll visible={true} key={index} duration={(index + 1) * 200} effect={"scaleIn"}>
+                    <SocialIcon {...socialProfile.fields}/>
+                  </AnimateOnScroll>
+                )
+              })}
             </div>
           </>
         </AnimateOnScroll>

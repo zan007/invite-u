@@ -1,8 +1,5 @@
-.social-icons {
-  display: flex;
-  margin-top: 1rem;
-
-  .icon-container {
+.social-icon {
+  &.icon-container {
     display: flex;
     justify-content: center;
     align-items: center;

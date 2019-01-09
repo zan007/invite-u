@@ -15,7 +15,8 @@
     "lint:ts": "tslint -c ./tslint.json -p ./tsconfig.json -t codeFrame -e node_modules",
     "test:e2e": "node ./tests/e2e/index.js",
     "test:unit": "jest",
-    "test:unit:coverage": "jest --coverage"
+    "test:unit:coverage": "jest --coverage",
+    "heroku-postbuild": "npm build:prod"
   },
   "author": "pploszaj",
   "devDependencies": {

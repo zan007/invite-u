@@ -13,6 +13,11 @@ class AppComponent extends React.Component {
   constructor(props: {}) {
     super(props)
     smoothscroll.polyfill()
+
+    if (window.history.scrollRestoration) {
+      // Back off, browser, I got this...
+      window.history.scrollRestoration = "manual"
+    }
   }
 
   render() {

@@ -50,7 +50,7 @@ const Section: React.SFC<IProps> = ({
   })
 
   return (
-    <InView>
+    <InView anchor={anchor}>
       <section className={classList} id={anchor}>
         {(image && backgroundPosition) &&
           <BackgroundImage

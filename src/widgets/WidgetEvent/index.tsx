@@ -6,17 +6,7 @@ import {Icon, IconName} from "components/Icon"
 import {Entry} from "contentful"
 import {WidgetsList} from "../../components/WidgetsList"
 import {AnimateOnScroll} from "components/AnimateOnScroll"
-
-interface IEventDetails {
-  name: string
-  icon: IconName
-  title: string
-  date: string
-  time: string
-  place: string
-  link: string
-  additionalDetails: Array<Entry<any>>
-}
+import {IEventDetails} from "../../models/eventDetails"
 
 interface IProps {
   name: string

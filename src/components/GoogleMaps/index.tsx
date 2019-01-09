@@ -2,13 +2,15 @@ import React from "react"
 import {} from "googlemaps"
 import {IMarker} from "../../models/marker"
 import {Entry} from "contentful"
-import "./GoogleMaps.scss"
 import GoogleMapsApiLoader from "google-maps-api-loader"
 import {Col, Row} from "../grid"
 import {IMapState} from "redux/map/model"
 import {connect} from "react-redux"
 import {setCurrentMarker} from "redux/map/actions"
 import {IStoreState} from "redux/model"
+
+import "./GoogleMaps.scss"
+import "snazzy-info-window/dist/snazzy-info-window.scss"
 
 interface IProps {
   children?: any,
@@ -67,8 +69,6 @@ class GoogleMaps extends React.PureComponent<Props, IState> {
   }
 
   initMap() {
-    const bounds = new google.maps.LatLngBounds()
-
     this.map = new google.maps.Map(this.mapContainer, {
       center: this.getPositionFields(this.props.markers[0]),
       zoom: 16,
@@ -77,8 +77,22 @@ class GoogleMaps extends React.PureComponent<Props, IState> {
       },
     })
 
+    this.setMapStyles()
+    this.setMapMarkers()
+  }
+
+  private setMapStyles = () => {
     this.map.mapTypes.set("styled_map", this.getMapStyles())
     this.map.setMapTypeId("styled_map")
+  }
+
+  private setMapContainer = (mapContainer: HTMLDivElement) => {
+    this.mapContainer = mapContainer
+  }
+
+  private setMapMarkers = () => {
+    const snazzyInfoWindow = require("snazzy-info-window")
+    const bounds = new google.maps.LatLngBounds()
 
     this.props.markers.map((marker) => {
       const markerPosition = this.getPositionFields(marker)
@@ -91,12 +105,29 @@ class GoogleMaps extends React.PureComponent<Props, IState> {
 
       newMarker.setAnimation(google.maps.Animation.BOUNCE)
 
+      const infoWindow = new snazzyInfoWindow({
+        content: this.createMarkerDescription(marker.fields),
+        marker: newMarker,
+      })
+
       google.maps.event.addListener(newMarker, "mouseout", () => {
-        newMarker.setAnimation(google.maps.Animation.BOUNCE)
+        if (!infoWindow.isOpen()) {
+          newMarker.setAnimation(google.maps.Animation.BOUNCE)
+        }
       })
 
       google.maps.event.addListener(newMarker, "mouseover", () => {
-        newMarker.setAnimation(null)
+        if (!infoWindow.isOpen()) {
+          newMarker.setAnimation(null)
+        }
+      })
+
+      google.maps.event.addListener(newMarker, "click", () => {
+        infoWindow.open()
+      })
+
+      infoWindow.onRemove(() => {
+        newMarker.setAnimation(google.maps.Animation.BOUNCE)
       })
 
       bounds.extend(markerPosition)
@@ -105,11 +136,17 @@ class GoogleMaps extends React.PureComponent<Props, IState> {
     })
 
     this.map.fitBounds(bounds)
-
   }
 
-  private setMapContainer = (mapContainer: HTMLDivElement) => {
-    this.mapContainer = mapContainer
+  private createMarkerDescription = (marker: IMarker) => {
+    const {description, details} = marker
+    const {date, time, title} = details.fields
+
+    let descriptionContent = description
+
+    descriptionContent += `<br>${title}<br>${date}<br>${time}`
+
+    return descriptionContent
   }
 
   private createPinSymbol(color: string) {
@@ -118,7 +155,7 @@ class GoogleMaps extends React.PureComponent<Props, IState> {
       "0-1.2 0.4-2.2 1.3-3.1 0.8-0.8 1.9-1.3 3-1.3z",
       fillColor: color,
       fillOpacity: 1,
-      anchor: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(8, 14),
       strokeColor: color,
       strokeWeight: 0,
       scale: 4,

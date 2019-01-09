@@ -15,7 +15,7 @@ module.exports = {
   copyStatics() {
     return new CopyWebpackPlugin([
       {
-        from: pathResolve("src/assets/img"),
+        from: pathResolve("src/assets/img/"),
         to: 'assets/img'
       },
       {

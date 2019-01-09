@@ -14,11 +14,11 @@ module.exports = {
   copyStatics() {
     return new CopyWebpackPlugin([
       {
-        from: 'src/assets/img',
+        from: './src/assets/img',
         to: 'assets/img'
       },
       {
-        from: 'src/assets/fonts',
+        from: './src/assets/fonts',
         to: 'assets/fonts'
       },
     ]);

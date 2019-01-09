@@ -1,9 +1,10 @@
-const path = require("path")
-const webpack = require("webpack")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const CONFIG = require("../config")
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CONFIG = require("../config");
+const pathResolve = (dir) => path.resolve(__dirname, `../${dir}`);
 
 module.exports = {
   indexHtml() {
@@ -14,11 +15,11 @@ module.exports = {
   copyStatics() {
     return new CopyWebpackPlugin([
       {
-        from: './src/assets/img',
+        from: pathResolve("src/assets/img"),
         to: 'assets/img'
       },
       {
-        from: './src/assets/fonts',
+        from: pathResolve("src/assets/fonts"),
         to: 'assets/fonts'
       },
     ]);

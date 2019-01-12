@@ -7,7 +7,7 @@
   "scripts": {
     "start": "webpack-serve",
     "build:dev": "webpack --progress",
-    "build:prod": "rimraf ./dist && webpack -p",
+    "build:prod": "rimraf ./dist && webpack -p --env production",
     "serve:dist": "http-server ./dist -p 4000 -c-1",
     "profile": "webpack --profile --json > webpack-stats.json",
     "lint:css": "stylelint \"./src/**/*.scss\" --fix",
@@ -75,6 +75,7 @@
     "classnames": "^2.2.5",
     "contentful": "^5.1.3",
     "foundation-sites": "^6.4.4-rc1",
+    "express": "^4.16.4",
     "immutable": "^3.8.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

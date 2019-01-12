@@ -1,7 +1,9 @@
-const path = require("path")
-const common = require("./webpack.common")
-const loaders = require("./webpack.loaders")
-const plugins = require("./webpack.plugins")
+const path = require("path");
+const common = require("./common");
+const loaders = require("./loaders");
+const plugins = require("./plugins");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const pathResolve = (dir) => path.resolve(__dirname, `../${dir}`);
 
 module.exports = Object.assign(
   common,
@@ -15,13 +17,19 @@ module.exports = Object.assign(
     module: {
       rules: [
         loaders.js,
+        loaders.scss,
+        //loaders.scssExtracted,
         loaders.css,
-        loaders.scssExtracted,
         loaders.fonts,
         loaders.images,
       ]
     },
     plugins: [
+      new CopyWebpackPlugin([
+        {
+          from: pathResolve("server/")
+        }
+      ]),
       plugins.indexHtml(),
       plugins.copyStatics(),
       plugins.extractCSS(),

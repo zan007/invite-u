@@ -5,7 +5,8 @@
   "license": "UNLICENSED",
   "main": "src/index.ts",
   "scripts": {
-    "start": "webpack-serve",
+    "start": "node dist/server.js",
+    "start:dev": "webpack-serve",
     "build:dev": "webpack --progress",
     "build:prod": "rimraf ./dist && webpack -p --env production && node server",
     "serve:dist": "http-server ./dist -p 4000 -c-1",

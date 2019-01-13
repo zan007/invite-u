@@ -8,7 +8,7 @@
     "start": "node dist/server.js",
     "start:dev": "webpack-serve",
     "build:dev": "webpack --progress",
-    "build:prod": "rimraf ./dist && webpack -p --env production && node server",
+    "build:prod": "rimraf ./dist && webpack -p --env production",
     "serve:dist": "http-server ./dist -p 4000 -c-1",
     "profile": "webpack --profile --json > webpack-stats.json",
     "lint:css": "stylelint \"./src/**/*.scss\" --fix",

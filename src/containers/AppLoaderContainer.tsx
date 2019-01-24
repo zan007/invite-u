@@ -2,7 +2,7 @@ import * as React from "react"
 import {connect} from "react-redux"
 import {setPages} from "redux/globals/actions"
 import {getPages} from "dao/pages"
-import {Spinner} from "components/Spinner"
+import {SpinnerWrapper} from "components/Spinner"
 import {MatchMedia} from "components/MatchMedia"
 
 const mapDispatchToProps = {setPages}
@@ -31,7 +31,7 @@ class AppLoaderContainer extends React.Component<DispatchProps, IState> {
       )
     }
 
-    return <Spinner />
+    return <SpinnerWrapper />
   }
 
   private async fetchData() {

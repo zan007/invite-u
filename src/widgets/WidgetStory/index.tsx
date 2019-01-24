@@ -28,7 +28,7 @@ class WidgetStory extends React.Component<IProps, IState> {
       <div className={"widget-story"}>
         <AnimateOnScroll visible={true} duration={500}>
           <Row hAlign={"center"} vAlign={"middle"} >
-              <Col small={6} className={"text-center"}>
+              <Col small={8} className={"text-center"}>
                 <Markdown
                   escapeHtml={true}
                   source={text}

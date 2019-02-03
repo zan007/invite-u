@@ -30,6 +30,7 @@ export type IconName = "arrow-down" |
   "map-location" |
   "couple" |
   "instagram" |
+  "love-letter" |
   "hearts" |
   "heart-paper" |
   "heart-notepad"

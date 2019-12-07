@@ -23,6 +23,9 @@ class WidgetStory extends React.Component<IProps, IState> {
 
   render() {
     const {images, text} = this.props
+    const sortedImages = images.sort((a: Asset, b: Asset): number => {
+      return a.fields.file.fileName.localeCompare(b.fields.file.fileName)
+    })
 
     return (
       <div className={"widget-story"}>
@@ -38,7 +41,7 @@ class WidgetStory extends React.Component<IProps, IState> {
           </Row>
         </AnimateOnScroll>
         <div>
-          <Gallery images={images}/>
+          <Gallery images={sortedImages}/>
         </div>
       </div>
     )

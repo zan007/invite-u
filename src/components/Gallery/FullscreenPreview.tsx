@@ -24,7 +24,7 @@ const FullscreenPreview: React.SFC<IProps> = ({images, currentImageIndex}) => {
           <Carousel
             opts={{
               observer: true,
-              slidesPerView: "auto",
+              slidesPerView: 1,
               initCallback: onInitSwiper,
               roundLengths: true,
               preventClicks: false,

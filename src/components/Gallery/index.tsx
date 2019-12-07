@@ -131,10 +131,13 @@ class Gallery extends React.Component<Props, IGalleryState> {
       autoplay: {
         delay: 60000,
       },
-      pagination: {
+      /*pagination: {
         el: ".horizontal-pagination",
         type: "bullets",
         clickable: true,
+      },*/
+      renderPagination: () => {
+        return ""
       },
       navigation: {
         nextEl: ".swiper-button-next",

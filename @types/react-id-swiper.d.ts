@@ -33,6 +33,7 @@ declare module "react-id-swiper" {
 
   interface ISwiperOpts {
     loop?: boolean
+    renderPagination?: () => void
     observer?: boolean
     roundLengths?: boolean
     speed?: number
@@ -43,6 +44,8 @@ declare module "react-id-swiper" {
     cubeEffect?: IOptsCubeEffect,
     autoplay?: IOptsAutoplay | boolean
     pagination?: IOptsPagination
+    preloadImages?: boolean,
+    lazy?: boolean,
     navigation?: IOptsNavigation
     preventClicks?: boolean
     slideToClickedSlide?: boolean

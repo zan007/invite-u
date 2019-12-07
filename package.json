@@ -19,6 +19,9 @@
     "test:unit:coverage": "jest --coverage",
     "heroku-postbuild": "npm run build:prod"
   },
+  "engines": {
+    "node": "8.10.0"
+  },
   "author": "pploszaj",
   "devDependencies": {
     "@types/classnames": "^2.2.3",
